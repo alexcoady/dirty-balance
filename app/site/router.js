@@ -44,7 +44,7 @@ module.exports = function ( passport ) {
 
 
   // LOCAL
-  router.post( "/login", bodyParser(), passport.authenticate("local", {
+  router.post( "/login", bodyParser.json(), bodyParser.urlencoded({extended:true}), passport.authenticate("local", {
     successRedirect: "/profile",
     failureRedirect: "/",
     failureFlash: true
@@ -84,7 +84,7 @@ module.exports = function ( passport ) {
 
   // LOCAL (still uses .authenticate() method)
   router.get( "/connect/local", connectLocal );
-  router.post( "/connect/local", bodyParser(), passport.authenticate("local", {
+  router.post( "/connect/local", bodyParser.json(), bodyParser.urlencoded({extended:true}), passport.authenticate("local", {
     successRedirect: "/profile",
     failureRedirect: "/connect/local",
     failureFlash: true

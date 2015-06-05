@@ -1,7 +1,7 @@
 doctype !!!
 html
   head
-    title Split 2.0
+    title= C.SITE_NAME
     link(rel="stylesheet", href="/public/bower_components/bootstrap/dist/css/bootstrap.css")
   body
     
@@ -15,11 +15,9 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href="/") Split 2.0
+          a.navbar-brand(href="/")= C.SITE_NAME
         div#bs-example-navbar-collapse-1.collapse.navbar-collapse
           if activeUser
-            ul.nav.navbar-nav
-              li: a(href="/bills") Bills
             ul.nav.navbar-nav.navbar-right
               li: a(href="/profile")= activeUser.name || "Profile"
     

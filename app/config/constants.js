@@ -30,5 +30,12 @@ define("ROUTE_SUFFIXES", {
   "invite": "invite"
 });
 
+define("ROUTES", {
+  "dashboard": "dashboard/",
+  "user": "user/",
+  "login": "login"
+});
+
+
 
 module.exports = allconstants;

@@ -29,7 +29,9 @@ if ( process.env.NODE_ENV == 'development' ) {
     secret: 'keyboard cat',
     store: new MongoStore({
       db : 'session'
-    })
+    }),
+    resave: false,
+    saveUninitialized: false
   }));
 
 } else app.use( session({ secret: 'keyboard cat' }) );
