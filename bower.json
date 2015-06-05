@@ -1,14 +1,21 @@
 {
-  "name": "flatrate",
+  "name": "dirty-balance",
   "version": "0.0.1",
-  "license": "MIT",
+  "license": "n/a",
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components"
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
   ],
   "dependencies": {
     "normalize-css": "~3.0.0",
-    "modernizr": "~2.8.3"
-  }
+    "modernizr": "~2.8.3",
+    "bootstrap": "~3.3.4"
+  },
+  "authors": [
+    "Alex Coady <alexandercoady@me.com>"
+  ]
 }

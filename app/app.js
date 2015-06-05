@@ -46,8 +46,6 @@ app.use( "/public", express.static(__dirname + "./../public/") );
 // Routers
 app.use( require("./site/router")(passport) );
 app.use( require("./users/router") );
-app.use( require("./bills/router") );
-app.use( require("./payments/router") );
 
 // Errors
 app.use( require("./errors/notFound") );
