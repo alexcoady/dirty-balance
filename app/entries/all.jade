@@ -1,0 +1,20 @@
+extends ./../layout
+block body
+
+  h1 Entries
+  
+  h2 Add new
+  
+  form(method="POST", action="/entries").form-inline
+    .form-group
+      label(for="entry-vendorName").control-label.sr-only Vendor
+      input(id="entry-vendorName", type="text", name="email", placeholder="Vendor").form-control
+    .form-group
+      label(for="entry-desc").control-label.sr-only Description
+      input(id="entry-desc", type="text", name="desc", placeholder="Description").form-control
+    .form-group
+      label(for="entry-amount").control-label.sr-only Amount
+      input(id="entry-amount", type="text", name="amount", placeholder="Amount").form-control
+    button(type="submit").btn.btn-default Add
+    
+  h2 All

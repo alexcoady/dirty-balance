@@ -1,6 +1,6 @@
 var express = require("express");
 var session = require("express-session");
-var MongoStore = require('connect-mongo')(session);
+var MongoStore = require("connect-mongo")(session);
 var cookieParser = require("cookie-parser");
 var passport = require("passport");
 var flash = require("connect-flash");
@@ -22,19 +22,19 @@ app.locals.dateformat = require("dateformat");
 // Session settings
 app.use( cookieParser() );
 
-if ( process.env.NODE_ENV == 'development' ) {
+if ( process.env.NODE_ENV == "development" ) {
 
   app.use( session({
 
-    secret: 'keyboard cat',
+    secret: "keyboard cat",
     store: new MongoStore({
-      db : 'session'
+      db : "session"
     }),
     resave: false,
     saveUninitialized: false
   }));
 
-} else app.use( session({ secret: 'keyboard cat' }) );
+} else app.use( session({ secret: "keyboard cat" }) );
 
 // Passport settings
 app.use( passport.initialize() );
@@ -48,6 +48,7 @@ app.use( "/public", express.static(__dirname + "./../public/") );
 // Routers
 app.use( require("./site/router")(passport) );
 app.use( require("./users/router") );
+app.use( require("./entries/router") );
 
 // Errors
 app.use( require("./errors/notFound") );
