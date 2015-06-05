@@ -1,4 +1,4 @@
-# Split
+# dirty-balance
 ## By Alex Coady
 
 ### Set up environment
