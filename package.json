@@ -1,0 +1,39 @@
+{
+  "name": "dirty-balance",
+  "version": "0.0.1",
+  "description": "Dirty balance sheets",
+  "authors": [
+    "Alex Coady"
+  ],
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.12.4",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^0.4.2",
+    "cookie-parser": "~1.0.1",
+    "date-utils": "^1.2.17",
+    "dateformat": "^1.0.11",
+    "express": "^4.1.2",
+    "express-session": "^1.0.4",
+    "jade": "^1.10.0",
+    "mongoose": "^3.8.29",
+    "numeral": "^1.5.3",
+    "passport": "^0.1.18",
+    "passport-facebook": "^1.0.3",
+    "passport-google-oauth": "^0.2.0",
+    "passport-local": "^0.1.6",
+    "passport-twitter": "^1.0.3",
+    "q": "^1.0.1",
+    "request": "^2.57.0",
+    "slug": "^0.4.2",
+    "validator": "^3.40.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.5.6",
+    "gulp-jshint": "^1.5.6",
+    "gulp-nodemon": "^1.0.5"
+  },
+  "scripts": {
+    "start": "webapp/server.js"
+  }
+}

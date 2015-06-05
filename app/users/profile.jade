@@ -1,0 +1,158 @@
+extends ./../layout
+block body
+
+  .row
+    .col-sm-12
+      .page-header
+        h1 User profile
+        a(href="/logout").btn.btn-default Logout
+      
+      
+  .row    
+    
+    .col-sm-6
+      
+      h2 Your details
+      
+      .panel.panel-default
+        .panel-heading
+          h3.panel-title Email and password
+        .panel-body
+          if user.local.email
+            p You have connected an email and password
+            a(href="/unlink/local").btn.btn-default Remove
+          else
+            p You have not connected an email and password
+            a(href="/connect/local").btn.btn-default Add email and password
+        
+
+  
+    .col-sm-6
+      
+      h2 Social accounts
+      
+      .panel.panel-primary
+        .panel-heading
+          h3.panel-title Facebook connect
+        .panel-body
+          if user.facebook.token
+            p You have connected a facebook account
+            a(href="/unlink/facebook").btn.btn-primary Unlink
+          else
+            p You have not connected a facebook account
+            a(href="/connect/facebook").btn.btn-primary Connect facebook
+        
+
+      .panel.panel-info
+        .panel-heading
+          h3.panel-title Twitter connect
+        .panel-body
+          if user.twitter.token
+            p You have connected a twitter account
+            a(href="/unlink/twitter").btn.btn-info Unlink
+          else
+            p You have not connected a twitter account
+            a(href="/connect/twitter").btn.btn-info Connect twitter
+        
+        
+      .panel.panel-danger
+        .panel-heading
+          h3.panel-title Google connect
+        .panel-body
+          if user.twitter.token
+            p You have connected a google account
+            a(href="/unlink/google").btn.btn-danger Unlink
+          else
+            p You have not connected a google account
+            a(href="/connect/google").btn.btn-danger Connect google
+        
+    
+    
+  //-     
+  //- 
+  //- .col-sm-6
+  //-   .well
+  //-     h3 Local
+  //-     
+  //-     if user.local.email
+  //-       
+  //-       dl
+  //-         dt ID
+  //-         dd= user._id
+  //-         dt Email
+  //-         dd= user.local.email
+  //-         dt Password
+  //-         dd= user.local.password
+  //-         
+  //-       a(href="/unlink/local").btn.btn-default Unlink
+  //-     
+  //-     else
+  //-       
+  //-       a(href="/connect/local").btn.btn-default Connect local
+  //- 
+  //- .col-sm-6
+  //-   .well
+  //-     h3.text-primary Facebook
+  //-     
+  //-     if user.facebook.token
+  //-     
+  //-       dl          
+  //-         dt ID
+  //-         dd= user.facebook.id
+  //-         dt Email
+  //-         dd= user.facebook.email
+  //-         dt Name
+  //-         dd= user.facebook.name
+  //-         dt Token
+  //-         dd= user.facebook.token
+  //-         
+  //-       a(href="/unlink/facebook").btn.btn-primary Unlink
+  //-     
+  //-     else
+  //-       
+  //-       a(href="/connect/facebook").btn.btn-primary Connect facebook
+  //- 
+  //- .col-sm-6
+  //-   .well
+  //-     h3.text-info Twitter
+  //-     
+  //-     if user.twitter.token
+  //-       
+  //-       dl          
+  //-         dt ID
+  //-         dd= user.twitter.id
+  //-         dt Username
+  //-         dd= user.twitter.username
+  //-         dt Name
+  //-         dd= user.twitter.displayName
+  //-         dt Token
+  //-         dd= user.twitter.token
+  //-       
+  //-       a(href="/unlink/twitter").btn.btn-info Unlink
+  //-     
+  //-     else
+  //-       
+  //-       a(href="/connect/twitter").btn.btn-info Connect twitter
+  //- 
+  //- 
+  //- .col-sm-6
+  //-   .well
+  //-     h3.text-danger Google+
+  //-     
+  //-     if user.google.token
+  //-       
+  //-       dl          
+  //-         dt ID
+  //-         dd= user.google.id
+  //-         dt Email
+  //-         dd= user.google.email
+  //-         dt Name
+  //-         dd= user.google.name
+  //-         dt Token
+  //-         dd= user.google.token
+  //- 
+  //-       a(href="/unlink/google").btn.btn-danger Unlink
+  //- 
+  //-     else
+  //-       
+  //-       a(href="/connect/google").btn.btn-danger Connect google

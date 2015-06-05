@@ -1,0 +1,37 @@
+extends ./../layout
+block body
+  
+  .jumbotron.text-center
+    
+    h1 Split
+  
+    h2 Log in or sign up
+    
+    if loginMessage.length
+      div(role="alert").alert.alert-danger=loginMessage
+    if signupMessage.length
+      div(role="alert").alert.alert-danger=signupMessage
+    
+    form(method="POST", action="login")
+      .form-group
+        label(for="home-email").control-label Email address
+        input(id="home-email", type="text", name="email", placeholder="Email address").form-control
+      .form-group
+        label(for="home-password").control-label Password
+        input(id="home-password", type="password", name="password", placeholder="Password").form-control
+      .btn-toolbar
+        .btn-group
+          button(name="authtype", type="submit", value="signup").btn.btn-default Sign up for an account
+        .btn-group
+          button(name="authtype", type="submit", value="login").btn.btn-default Login
+          
+          
+      h2 Log in or sign up with a social account
+      
+      .btn-toolbar
+        .btn-group
+          a(href="/auth/facebook").btn.btn-primary Facebook
+        .btn-group
+          a(href="/auth/twitter").btn.btn-info Twitter
+        .btn-group
+          a(href="/auth/google").btn.btn-danger Google

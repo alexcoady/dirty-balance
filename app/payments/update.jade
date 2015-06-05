@@ -1,0 +1,27 @@
+extend ./../layout
+block body
+  h1 Update payment
+        
+  p.lead #[strong Amount due:] £#{bill.amount}
+
+
+  form(method="POST", action=C.ROUTES.bills + bill._id + "/" + C.ROUTES.payments + paymentDate.getTime() + "/" + C.ROUTE_SUFFIXES.edit)
+    
+    //- AMOUNT
+    .form-group
+      - value= bill && bill.amount || null
+      label(for="add-amount") Amount
+      input(type="text", name="amount", placeholder="00.00", value=value)#add-amount.form-control
+      
+    .alert.alert-info
+      strong You are editing a payment that belongs to a rule with multiple dates. Do you want to change all future occurances also?
+      
+      .checkbox
+        label
+          input(type="checkbox", name="updateAll", checked=1) 
+          | Update all future occurances
+    
+    .btn-group      
+      button(type="submit").btn.btn-default Save changes
+      
+    

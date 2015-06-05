@@ -1,0 +1,21 @@
+extend ./../layout
+block body
+  h1= bill.name
+  
+  div.btn-group
+    a(href="/" + C.ROUTES.bills + bill._id + "/" + C.ROUTE_SUFFIXES.edit).btn.btn-default
+      span.glyphicon.glyphicon-edit
+      |  Edit
+  
+  h2 Bill
+  pre=bill
+  
+  h2 Dates
+  if dates && dates.length
+    div.list-group
+      each date in dates
+        - href = "/" + C.ROUTES.bills + bill._id + "/" + C.ROUTES.payments + date.getTime()
+        a(href=href).list-group-item= dateformat( date, "mediumDate" )  
+  else
+    
+    .alert.alert-info No dates yet

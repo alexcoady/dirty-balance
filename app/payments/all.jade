@@ -1,0 +1,13 @@
+extends ./../layout
+block body
+  h1 Payments
+
+  if payments.length
+    div.list-group
+      each payment in payments
+        pre=payment
+      
+  else
+    
+    .alert.alert-info 
+      p No payments
